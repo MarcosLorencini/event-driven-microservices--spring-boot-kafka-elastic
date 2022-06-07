@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.7.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.microservices.demo</groupId>
+	<artifactId>microservice-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>microservice-demo</name>
+	<description>Microservices demo project for Spring Boot</description>
+
+	<!--The packaging sholudn't be jar, but should be pom-->
+	<!--That will imply that we will use this pom as a base configuration, not for creating runnable jar.
+	So let's change the default packaging to pom using packaging property.-->
+	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>11</java.version>
+		<!--I will also define all versions in this file so that sub modules will just include a dependency
+		without specifying the version.
+		So I will create the spring-boot.version property in the properties section and reference
+		it from dependencies and plugins.-->
+		<spring-boot.version>2.7.0</spring-boot.version>
+
+		<!--Let's also create a version in the properties section for this plugin, and refer it
+		from the plugin itself.-->
+		<maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+	</properties>
+
+	<!--I will create a new section for dependency management, then move all dependencies into this new section.
+	This will help us to define all dependencies in this base pom.xml, without really downloading them.
+	Any sub module that wants to include a dependency, will simply override and use a dependencies
+	section in the module itself.-->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter</artifactId>
+				<!--We do all these changes to manage the dependencies with versions
+				in a single place in the base pom.xml file. And use them without hassle(trouble)
+				in the sub modules and microservices.-->
+				<version>${spring-boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-test</artifactId>
+				<version>${spring-boot.version}</version>
+				<scope>test</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+
+	<build>
+		By default maven uses Java 1.6 version for source and target settings.
+		And since we need to use Java 11, we will use maven compiler plugin to set this property.
+		Note that this is not in the management section, as we need this plugin application wide,
+		so that we can define it here to be used in sub modules without needed to override.
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<!--And one more thing is that, starting with Java 9, we need to use the release
+					property, so I will replace source and target properties with the release
+					property and set as 11 here. Note that if you use Java 8, you would leave
+					the source and target properties here instead of release.-->
+					<release>11</release>
+					<!--<source>1.8</source>
+					<target>1.8</target>-->
+				</configuration>
+			</plugin>
+		</plugins>
+		<!--let's also create a plugin management and put this Spring boot maven plugin inside this section.
+		Again, any service that wants to include this plugin will simply create a plugins section in
+		the module itself, without setting the version, but by setting any property or goals for this
+		task specifically.-->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
+
+		<!--<artifactId>spring-boot-maven-plugin</artifactId>
+		A couple of words about Spring boot maven plugin. It can create executable archive
+		files such as Jar files or War files, that contain all application dependencies,
+		and can be run with a single java -jar command. This behavior comes by just including
+		the plugin itself, because it is pre-configured to create target runnable jar.
+		In addition, this plugin helps to run Spring boot applications, generate build informations,
+		and start your spring boot application prior to running integration tests.
+		And finally, it helps to create docker images with the build-image goal, which comes
+		with spring boot 2.7.0. We will actually be using this property to create docker images
+		for our microservices.-->
