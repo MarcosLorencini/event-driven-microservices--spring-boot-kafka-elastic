@@ -58,10 +58,10 @@
 
 
 	<build>
-		By default maven uses Java 1.6 version for source and target settings.
+		<!--By default maven uses Java 1.6 version for source and target settings.
 		And since we need to use Java 11, we will use maven compiler plugin to set this property.
 		Note that this is not in the management section, as we need this plugin application wide,
-		so that we can define it here to be used in sub modules without needed to override.
+		so that we can define it here to be used in sub modules without needed to override.-->
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
