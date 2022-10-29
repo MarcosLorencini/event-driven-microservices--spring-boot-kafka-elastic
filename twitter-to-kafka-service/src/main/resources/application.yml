@@ -1,0 +1,12 @@
+#So I want to get the tweets from Twitter related with these keywords that are defined in te application
+#configuration file. To be able to use this list in the codes we need to match these values to java class
+# (TwitterToKafkaServiceConfigData.java), and we do that using a configuration class.
+
+twitter-to-kafka-service:
+  twitter-keywords:
+    - Java
+    - Microservices
+    - Spring
+    - Kafka
+    - Elasticsearch
+  welcome-message: Hello microservices!

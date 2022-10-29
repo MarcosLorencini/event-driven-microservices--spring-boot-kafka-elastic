@@ -1,0 +1,6 @@
+2022-10-29 16:45:13 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 15 on DESKTOP-9S366SU with PID 14984 (C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo\twitter-to-kafka-service\target\classes started by Marcos in C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo)
+2022-10-29 16:45:13 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-10-29 16:45:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.878 seconds (JVM running for 2.844)
+2022-10-29 16:45:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - App start
+2022-10-29 16:45:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-10-29 16:45:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Hello microservices!

@@ -1,0 +1,11 @@
+2022-06-21 20:56:12 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.2 on DESKTOP-9S366SU with PID 18836 (C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo\twitter-to-kafka-service\target\classes started by Marcos in C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo)
+2022-06-21 20:56:12 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-21 20:56:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.941 seconds (JVM running for 3.328)
+2022-06-21 20:56:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - App start
+2022-06-21 20:56:14 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-06-21 20:59:54 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Starting TwitterToKafkaServiceApplication using Java 17.0.2 on DESKTOP-9S366SU with PID 18656 (C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo\twitter-to-kafka-service\target\classes started by Marcos in C:\Users\Marcos\development\workspace\udemy-event-driven-microservices -spring-boot-kafka-elastic\microservice-demo)
+2022-06-21 20:59:54 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2022-06-21 20:59:55 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Started TwitterToKafkaServiceApplication in 1.796 seconds (JVM running for 2.701)
+2022-06-21 20:59:55 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - App start
+2022-06-21 20:59:55 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - [Java, Microservices, Spring, Kafka, Elasticsearch]
+2022-06-21 20:59:55 [main] INFO  c.m.d.t.t.s.TwitterToKafkaServiceApplication - Hello microservices!
